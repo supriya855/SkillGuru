@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ELearning</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="google-signin-client_id" content="365657134467-mcmtvo98jqrtdbbnpbsglgo5tghsr183.apps.googleusercontent.com">
+
+</head>
+  <body>
+    <div class = "our-skill-guru-page">
+    <!-- header-section -->
+    <div class="header">
+      <div class="logo-for-skillguru">
+      <p class="skill-guru"><b>SkillGuru</b></p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+      </svg>
+    </div>
+      <p>Courses</p>
+      <div class="search-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+      <input type="search" placeholder="Search" alt="Search">
+    </div>
+    <p class="teach-on-skillguru">Teach on SkillGuru</p>
+      <button onClick="SkillGuruLogIn()">Log In</button>
+      <button>Sign Up</button>
+    </div>
+    <hr>
+    <!-- About SkillGuru -->
+     <div class="more-about-skillguru-body-part">
+    <div class="about-skillguru">
+      <div class="image-container">
+       <img src="./assests/images/teachstudy.jpg" alt="SkillGuruTeaching"></img>
+       <div class ="text"><b>skillGuru provide free courses and made you excel in whatever the choosen skill</b></div>
+       </div>
+
+    </div>
+    <!-- Top trending courses div -->
+    <div class="skillguru-topcourses">
+      <center><b><p>Our Top Trending Courses Have a Look</b></p></center>
+      <div class="our-top-courses">
+     <img src="./assests/images/jsView.png" alt = "JavaScript Course">
+     <img src="./assests/images/dsaView.jpg" alt = "Dsa Course">
+     <img src="./assests/images/Guide_to_Full_Stack_Development.jpg" alt = "FullStack Development Course">
+    </div>
+    </div>
+    <div class="skillguru-feedback">
+      <center><b><p>Have a look at what people are thinking about skillGuru</b></p></center>
+      <div class ="main-view-feedback">
+      <p>I Studied DSA from SkillGuru which made me understand all concepts and I practised lot of question from <b>SkillGuru</b> Pattern Wise which is really good I suggest everyone to try SkillGuru</p>
+      <P>JavaScript I learnt From SkillGuru Which is Very good. Nice Explanation I got from SkillGuru</P>
+      <p>React I learnt From SkillGuru Which is Very good. Nice Explanation I got from SkillGuru</p>
+      <P>Django Framework I learnt From SkillGuru Which is Very good. Nice Explanation I got from SkillGuru</P>
+      </div>
+    </div>
+  </div>
+  <div class="sign-in-template">
+  <div id="signIn" style="display: none;">
+    <h2>Sign In</h2>
+    <form id="signInForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit">Sign In</button>
+        <span class="login-form--separator"><p>Other log in options</p></span>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <!-- <button id="github-login">Login with GitHub</button>
+        <div id="user-info"></div> -->
+
+    </form>
+</div>
+</div>
+  </div>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+<script>
+  function SkillGuruLogIn(){
+    document.querySelector(".more-about-skillguru-body-part").remove();
+    document.getElementById('signIn').style.display = 'block';
+}
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+</script>
+
+  <!-- <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script> -->
+  <app-root></app-root>
+</body>
+</html>
