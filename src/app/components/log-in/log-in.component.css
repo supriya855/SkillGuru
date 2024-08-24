@@ -1,0 +1,33 @@
+/* #signIn{
+    display: block;
+    text-align: center;
+    background-color: #f4f4f4;
+    width:30%;
+    height: 200%;
+    margin: 70px auto;
+    padding:30px;
+}
+.login-form--separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.login-form--separator::before, .login-form--separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+.login-form--separator::before {
+    margin-right: 10px;
+}
+
+.login-form--separator::after {
+    margin-left: 10px;
+}
+.g-signin2{
+    display:block;
+    margin-left: 150px;
+} */
